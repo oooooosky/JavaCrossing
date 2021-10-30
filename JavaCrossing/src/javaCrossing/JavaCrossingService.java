@@ -5,7 +5,7 @@ import java.util.*;
 public class JavaCrossingService implements JavaCrossingInterface{
 
 	// 캐릭터 생성
-	// 매개변수 : List<CharacterDTO>, List<FruitDTO>
+	// 매개변수 : List<CharacterDTO>, List<FruitDTO>, List<PriceDTO>
 	// 리턴 : characterList
 	@Override
 	public List<CharacterDTO> newJoin(List<CharacterDTO> characterList, List<FruitDTO> fruitList, List<PriceDTO> priceList) {
@@ -68,7 +68,7 @@ public class JavaCrossingService implements JavaCrossingInterface{
 	}
 
 	// 정보 확인
-	// 매개변수 : List<FruitDTO>, List<CharacterDTO>
+	// 매개변수 : List<FruitDTO>, List<CharacterDTO>, List<PriceDTO>
 	// 리턴 : void
 	@Override
 	public void informationView(List<FruitDTO> fruitList, List<CharacterDTO> characterList, List<PriceDTO> priceList) {
@@ -91,7 +91,7 @@ public class JavaCrossingService implements JavaCrossingInterface{
 	}
 
 	// 과일 채집
-	// 매개변수 : List<FruitDTO>, List<CharacterDTO>
+	// 매개변수 : List<FruitDTO>, List<CharacterDTO>, List<PriceDTO>
 	// 리턴 : fruitList
 	@Override
 	public List<FruitDTO> getFruit(List<FruitDTO> fruitList, List<CharacterDTO> characterList, List<PriceDTO> priceList) {
@@ -127,7 +127,7 @@ public class JavaCrossingService implements JavaCrossingInterface{
 	}
 
 	// 과일 팔기
-	// 매개변수 : List<CharacterDTO>
+	// 매개변수 : List<CharacterDTO>, List<PriceDTO>
 	// 리턴 : characterList
 	@Override
 	public List<CharacterDTO> sellFruit(List<CharacterDTO> characterList, List<PriceDTO> priceList) {
@@ -169,7 +169,7 @@ public class JavaCrossingService implements JavaCrossingInterface{
 	}
 
 	// 잠자기
-	// 매개변수 : List<CharacterDTO>, List<FruitDTO>
+	// 매개변수 : List<CharacterDTO>, List<FruitDTO>, List<PriceDTO>
 	// 리턴 : characterList
 	@Override
 	public List<CharacterDTO> sleep(List<CharacterDTO> characterList, List<FruitDTO> fruitList, List<PriceDTO> priceList) {
@@ -199,7 +199,7 @@ public class JavaCrossingService implements JavaCrossingInterface{
 	}
 
 	// 빚갚기
-	// 매개변수 : List<CharacterDTO>
+	// 매개변수 : List<CharacterDTO>, List<PriceDTO>
 	// 리턴 : characterList
 	@Override
 	public List<CharacterDTO> rePay(List<CharacterDTO> characterList, List<PriceDTO> priceList) {
@@ -218,12 +218,12 @@ public class JavaCrossingService implements JavaCrossingInterface{
 				System.out.println("\n" + "╭╼|════════════════════════|╾╮");
 				System.out.println("   "+money + "원 만큼의 금액을 갚았습니다.");
 				System.out.println("╰╼|════════════════════════|╾╯" + "\n");
-				System.out.println("\n" + "╭╼|══════════════|╾╮");
+				System.out.println("\n" + "╭╼|════════════════|╾╮");
 				System.out.println("   현재 잔고 : "+cha.getMoney()+"원.");
-				System.out.println("╰╼|══════════════|╾╯" + "\n");
-				System.out.println("\n" + "╭╼|═══════════════|╾╮");
+				System.out.println("╰╼|════════════════|╾╯" + "\n");
+				System.out.println("\n" + "╭╼|═════════════════|╾╮");
 				System.out.println("   남은 빚 : "+ characterList.get(0).getPay() + "원");
-				System.out.println("╰╼|═══════════════|╾╯" + "\n");
+				System.out.println("╰╼|═════════════════|╾╯" + "\n");
 				if(cha.getPay()<=0) {
 					cha.setRun(false);
 					gameEnd(characterList, priceList);
